@@ -45,7 +45,7 @@ int UnitModel::rowCount(const QModelIndex &) const
 
 int UnitModel::columnCount(const QModelIndex &) const
 {
-    return 4;
+    return 5;
 }
 
 QVariant UnitModel::headerData(int section, Qt::Orientation orientation, int role) const
@@ -58,6 +58,8 @@ QVariant UnitModel::headerData(int section, Qt::Orientation orientation, int rol
         return i18n("Active State");
     } else if (orientation == Qt::Horizontal && role == Qt::DisplayRole && section == 3) {
         return i18n("Unit State");
+    } else if (orientation == Qt::Horizontal && role == Qt::DisplayRole && section == 4) {
+        return i18n("Desc");
     }
     return QVariant();
 }
@@ -79,6 +81,9 @@ QVariant UnitModel::data(const QModelIndex & index, int role) const
             return m_unitList->at(index.row()).active_state;
         else if (index.column() == 3)
             return m_unitList->at(index.row()).sub_state;
+        else if (index.column() == 4)
+            return m_unitList->at(index.row()).description;
+
     }
 
     else if (role == Qt::ForegroundRole)
