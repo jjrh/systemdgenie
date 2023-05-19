@@ -1,3 +1,8 @@
+Upstream differences
+-----------
+
+* Show service description column
+
 SystemdGenie
 ============
 
@@ -5,7 +10,6 @@ SystemdGenie is a systemd management utility based on KDE technologies.
 It provides a graphical frontend for the systemd daemon, which allows for
 viewing and controlling systemd units, logind sessions as well as easy 
 modification of configuration and unit files.
-
 
 Installation
 ------------
